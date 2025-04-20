@@ -147,6 +147,21 @@ except:
     st.caption("**:red[_Please fill out the details_ !]**")
 
 import pandas as pd
+
+import pandas as pd
+import requests
+from io import StringIO
+import streamlit as st
+
+def load_original_data():
+    url = 'https://raw.githubusercontent.com/[username]/[repository]/main/[file].csv'
+    response = requests.get(url)
+    if response.status_code == 200:
+        return pd.read_csv(StringIO(response.text))
+    else:
+        st.error("Failed to load data from GitHub.")
+        return None
+
 df=pd.read_csv('pages/heart.csv')
 from sklearn.model_selection import train_test_split
 x=df.iloc[:,0:13]
