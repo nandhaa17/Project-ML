@@ -147,7 +147,7 @@ except:
     st.caption("**:red[_Please fill out the details_ !]**")
 
 import pandas as pd
-df=pd.read_csv('heart.csv')
+df=pd.read_csv('heart1.csv')
 from sklearn.model_selection import train_test_split
 x=df.iloc[:,0:13]
 
