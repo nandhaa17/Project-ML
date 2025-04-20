@@ -142,5 +142,5 @@ try:
 except:
 
     # Alerting the user to give all inputs
-    import pandas as pd
+    
     st.caption("**:red[_Please fill out the details_ !]**")
