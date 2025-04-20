@@ -147,41 +147,41 @@ except:
     st.caption("**:red[_Please fill out the details_ !]**")
 
 import pandas as pd
-    df=pd.read_csv('heart.csv')
-    from sklearn.model_selection import train_test_split
-    x=df.iloc[:,0:13]
+df=pd.read_csv('heart.csv')
+from sklearn.model_selection import train_test_split
+x=df.iloc[:,0:13]
 
-    y=df.iloc[:,13]
+y=df.iloc[:,13]
 
-    inp=pd.DataFrame(temp,index=[0])
+inp=pd.DataFrame(temp,index=[0])
 
-    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.1)
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.1)
 
     # Aplying machie learning algorithm
 
-    from sklearn.naive_bayes import GaussianNB
-    gnb=GaussianNB()
-    gnb.fit(x_train,y_train.values.ravel())
-    y=gnb.predict_proba(inp)
-    st.write(pd.DataFrame([['No',y[0][0]],['Yes',y[0][1]]]).values)
+from sklearn.naive_bayes import GaussianNB
+gnb=GaussianNB()
+gnb.fit(x_train,y_train.values.ravel())
+y=gnb.predict_proba(inp)
+st.write(pd.DataFrame([['No',y[0][0]],['Yes',y[0][1]]]).values)
 
-    yes_val=round(y[0][1]*100)
+yes_val=round(y[0][1]*100)
 
 
     # Printing output chart
 
-    out={"Yes":yes_val,"No":100-yes_val}
-    out=pd.DataFrame(out,index=[0])
-    st.markdown('\n\n\n\n\n')
-    st.header("**Predicted Graph**")
-    st.markdown("\n\n\n\n\n")
-    st.bar_chart(out,y_label="Percentage of attack",stack=False)
+out={"Yes":yes_val,"No":100-yes_val}
+out=pd.DataFrame(out,index=[0])
+st.markdown('\n\n\n\n\n')
+st.header("**Predicted Graph**")
+st.markdown("\n\n\n\n\n")
+st.bar_chart(out,y_label="Percentage of attack",stack=False)
 
     # Conclusion message
 
-    if yes_val<45:
-        st.header(':green[You are in Healthy Condition]')
-    elif yes_val<70 and yes_val>=45:
-        st.header(':yellow[You Have Low Risk of Heart Dissease]')
-    else:
-        st.header(':red[You Have High Risk of Heart Dissease]')
+if yes_val<45:
+    st.header(':green[You are in Healthy Condition]')
+elif yes_val<70 and yes_val>=45:
+    st.header(':yellow[You Have Low Risk of Heart Dissease]')
+else:
+    st.header(':red[You Have High Risk of Heart Dissease]')
