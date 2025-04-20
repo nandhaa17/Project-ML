@@ -7,6 +7,7 @@ st.set_page_config(
 
 
 st.title("Heart Disease Prediction")
+st.caption("Try Simple option for easy access")
 
 try:
 
