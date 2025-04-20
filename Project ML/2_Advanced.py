@@ -154,7 +154,7 @@ from io import StringIO
 import streamlit as st
 
 def load_original_data():
-    url = 'https://raw.githubusercontent.com/[username]/[repository]/main/[file].csv'
+    url = 'https://raw.githubusercontent.com/nandhaa17/Project-ML/refs/heads/main/Project%20ML/heart.csv'
     response = requests.get(url)
     if response.status_code == 200:
         return pd.read_csv(StringIO(response.text))
