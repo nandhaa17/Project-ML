@@ -165,6 +165,7 @@ df=load_original_data()
 st.write(df)
 #df=pd.read_csv('pages/heart.csv')
 
+import sklearn
 from sklearn.model_selection import train_test_split
 x=df.iloc[:,0:13]
 
@@ -176,7 +177,7 @@ x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.1)
 
     # Aplying machie learning algorithm
 
-import sklearn
+
 from sklearn.naive_bayes import GaussianNB
 gnb=GaussianNB()
 gnb.fit(x_train,y_train.values.ravel())
