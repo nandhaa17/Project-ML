@@ -6,7 +6,7 @@ st.set_page_config(
 )
 
 st.title("Heart Disease Prediction")
-
+st.caption("Try Advanced option for more accurate results")
 try:
 
     # Getting input via form
