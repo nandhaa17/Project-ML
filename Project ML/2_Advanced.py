@@ -164,6 +164,8 @@ def load_original_data():
 df=load_original_data()
 st.write(df)
 #df=pd.read_csv('pages/heart.csv')
+
+exec(code, module.__dict__)
 from sklearn.model_selection import train_test_split
 x=df.iloc[:,0:13]
 
