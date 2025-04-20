@@ -161,7 +161,8 @@ def load_original_data():
     else:
         st.error("Failed to load data from GitHub.")
         return None
-
+df=load_original_data()
+st.write(df)
 #df=pd.read_csv('pages/heart.csv')
 from sklearn.model_selection import train_test_split
 x=df.iloc[:,0:13]
